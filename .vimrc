@@ -33,4 +33,7 @@ imap <F6> <esc>:bn<cr>i
 nmap <F3> :NERDTree<cr>
 nmap <F4> :NERDTreeClose<cr>
 
+" F5 показать буфера (не те)
+map <F7> :BufExplorerHorizontalSplit<cr>
+
 
