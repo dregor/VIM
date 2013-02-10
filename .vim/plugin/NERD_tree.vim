@@ -3974,7 +3974,7 @@ function! s:toggleZoom()
     endif
 endfunction
 
-"FUNCTION: s:upDir(keepState) {{{2
+"iFUNCTION: s:upDir(keepState) {{{2
 "moves the tree up a level
 "
 "Args:
@@ -4015,5 +4015,3 @@ endfunction
 let &cpo = s:old_cpo
 
 " vim: set sw=4 sts=4 et fdm=marker:
-
-call s:initNerdTree(getcwd())
