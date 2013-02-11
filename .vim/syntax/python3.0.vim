@@ -125,7 +125,7 @@ syn match   pythonFunction	"\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^
 syn keyword pythonRepeat	for while
 syn keyword pythonConditional	if elif else
 syn keyword pythonPreCondit	import from
-syn keyword pythonException	try except finally
+syn keyword pythonException	try except else finally
 syn keyword pythonOperator	and in is not or
 
 " Decorators (new in Python 2.4)

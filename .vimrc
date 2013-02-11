@@ -14,7 +14,7 @@ set shiftwidth=4
 set smarttab
 set expandtab "Ставим табы пробелами
 set softtabstop=4 "4 пробела в табе
-set virtualedit=all " позволяет курсору выходить за пределы строки
+"set virtualedit=all " позволяет курсору выходить за пределы строки
 
 "Автоотступ
 set autoindent
@@ -75,14 +75,14 @@ set incsearch
 set ignorecase
 
 "НАСТРОЙКИ СВОРАЧИВАНИЯ БЛОКОВ КОДА (фолдинг)
-set foldenable " включить фолдинг
-set foldmethod=indent "syntax определять блоки на основе синтаксиса файла
-set foldcolumn=1" показать полосу для управления сворачиванием
-let perl_folding=1 " правильное сворачивание классов и функций Perl
-let php_folding=1 " правильное сворачивание классов и функций PHP
-let python_folding=1 " Python
-set foldlevel=0 " Первый уровень вложенности открыт, остальные закрыты
-set foldopen=all " автоматическое открытие сверток при заходе в них
+"set foldenable " включить фолдинг
+"set foldmethod=indent "syntax определять блоки на основе синтаксиса файла
+"set foldcolumn=1" показать полосу для управления сворачиванием
+"let perl_folding=1 " правильное сворачивание классов и функций Perl
+"let php_folding=1 " правильное сворачивание классов и функций PHP
+"let python_folding=1 " Python
+"set foldlevel=0 " Первый уровень вложенности открыт, остальные закрыты
+"set foldopen=all " автоматическое открытие сверток при заходе в них
 
 " Не переключаем раскладку
 set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.~QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
@@ -113,17 +113,23 @@ map <F6> :bn!<cr>
 vmap <F6> <esc>:bn!<cr>i
 imap <F6> <esc>:bn!<cr>i
 
+nmap <F7> :TagbarToggle<CR> 
+
 "Вызываем SnippletsEmu по F8
-let g:snippetsEmu_key = "<F8>"
+"let g:snippetsEmu_key = <C-Tab>                             
+
+let g:tagbar_ctags_bin = '/home/dregor/.vim/ctags/bin/ctags'
 
 " F9 Спитонить
-imap <F9> <ESC>:w\|! %<CR>
-nmap <F9> :w\|! %<CR>
-vmap <F9> <ESC>:w\|! '<,'><CR>
+set wildmenu
+set wcm=<Tab>
+menu executor.python :!python3 %<CR>
+menu executor.bash :!bash %<CR>
+map <F9> :emenu executor.<Tab>
 
 " Хорошие цвета
-colorscheme elflord 
-
+colorscheme elflord            
+                 
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
@@ -133,3 +139,4 @@ let g:miniBufExplModSelTarget = 1
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "В .py файлах включаем умные отступы после ключевых слов
 autocmd BufRead *.py set number smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
