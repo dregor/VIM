@@ -126,6 +126,8 @@ set wcm=<Tab>
 menu executor.python :!python3 %<CR>
 menu executor.bash :!bash %<CR>
 map <F9> :emenu executor.<Tab>
+vmap <F9> <esc>::emenu executor.<Tab>
+imap <F9> <esc>::emenu executor.<Tab>
 
 " Хорошие цвета
 colorscheme elflord            
@@ -140,3 +142,16 @@ autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
 "В .py файлах включаем умные отступы после ключевых слов
 autocmd BufRead *.py set number smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
+
+" Тэгбар
+" Показывать окно слева
+let g:tagbar_left = 1
+
+" Ширина окна
+let g:tagbar_width = 30
+
+" Показывать стрелки вместо +/-
+let g:tagbar_iconchars = ['▶', '◢']
+
+" Не сортировать
+let g:tagbar_sort = 0
